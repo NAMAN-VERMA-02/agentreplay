@@ -1,0 +1,15 @@
+# Policy for the demo agent. SAME means none of these assertions found a regression.
+required:
+  - tool: search_files
+    arguments:
+      root: { prefix: /allowed-root }
+  - tool: read_file
+    arguments:
+      user_id: u-1
+      path: { prefix: /allowed-root/ }
+forbidden: [delete_file]
+output:
+  mode: contains
+  expected:
+    - "FILE: /allowed-root/report.pdf"
+    - "BACKUP: missing"

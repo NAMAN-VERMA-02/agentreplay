@@ -1,0 +1,15 @@
+# Binaries and build output
+/agentreplay
+/bin/
+*.exe
+*.test
+*.out
+/dist/
+
+# Cassettes can hold prompts, personal data and file contents: keep them local by default.
+*.jsonl
+!testdata/**/*.jsonl
+
+# Local secrets
+.env
+.env.*
